@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="../css/Payment.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+        function validateForm(event) {
+            var inputs = document.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], textarea');
+            var allFilled = true;
+            inputs.forEach(function (input) {
+                if (input.value === "") {
+                    alert("حقل " + input.placeholder + " فارغ");
+                    allFilled = false;
+                    event.preventDefault();
+                    return false;
+                }
+            });
+            if (allFilled) {
+                alert("تم الدفع بنجاح");
+                window.location.href = './Home.html';
+                return true;
+            }
+            event.preventDefault();
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <ul class="nav-link">
+                <li><a href="./Home.htm"><i class="fa-solid fa-person-shelter"></i> Home</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <h2>PERSONAL INFORMATION</h2>
+            <form onsubmit="return validateForm(event)">
+                <div class="form-group">
+                    <input type="text" placeholder="First Name" required>
+                    <input type="text" placeholder="Last Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                    <input type="text" placeholder="Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="City" required>
+                    <input type="text" placeholder="Card Number" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Country" required>
+                    <input type="tel" placeholder="Phone Number" required>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="createAccount">
+                    <label for="createAccount">Create Account</label>
+                </div>
+
+                <h2>BILLING INFORMATION</h2>
+                <div class="form-group">
+                    <input type="text" placeholder="Name on Card" required>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="shipDifferent">
+                        <label for="shipDifferent">Ship To Different Address?</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Credit Card Number" required>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="noteToExpeditor">
+                        <label for="noteToExpeditor">Note To Expeditor</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Card Type" required>
+                    <textarea placeholder="Details" required></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Expiration Date" required>
+                    <input type="text" placeholder="CVV" required>
+                </div>
+                <a href="./Home.html" onclick="return validateForm(event)">pay</a>
+
+            </form>
+        </div>
+</body>
+
+</html>

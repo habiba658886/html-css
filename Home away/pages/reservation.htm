@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reservation</title>
+    <link rel="stylesheet" href="../css/reservation.css" />
+    <script>
+        function validateForm(event) {
+            var country = document.getElementById('country').value;
+            var phone = document.getElementById('phone').value;
+
+            if (country === "") {
+                alert("حقل البلد فارغ");
+                event.preventDefault();
+                return false;
+            }
+            if (phone === "") {
+                alert("حقل رقم الهاتف فارغ");
+                event.preventDefault();
+                return false;
+            }
+            alert("تم ملء النموذج بنجاح");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>طلب حجز</h1>
+        </header>
+
+        <section class="details">
+            <h2>رحلتك</h2>
+            <div class="detail-item">
+                <span>التواريخ</span>
+                <a href="#">تعديل</a>
+            </div>
+            <div class="detail-item">
+                <span>الضيوف</span>
+                <a href="#">تعديل</a>
+            </div>
+        </section>
+
+        <section class="pricing">
+            <h2>تفاصيل السعر</h2>
+            <div class="price-item">
+                <span> ليالٍ</span>
+                <span>ج.م </span>
+            </div>
+            <div class="price-item">
+                <span>رسوم خدمة Airbnb</span>
+                <span>ج.م </span>
+            </div>
+            <div class="total">
+                <span>المجموع (EGP)</span>
+                <span>ج.م </span>
+            </div>
+        </section>
+
+        <section class="login">
+            <h2>تسجيل الدخول أو الاشتراك للحجز</h2>
+            <form onsubmit="return validateForm(event)">
+                <label for="country">البلد / المنطقة</label>
+                <select id="country">
+                    <option value="">اختر البلد</option>
+                    <option>مصر (+20)</option>
+                    <option>السعودية (+966)</option>
+                    <option>الإمارات (+971)</option>
+                </select>
+                <label for="phone">رقم الهاتف</label>
+                <input type="tel" id="phone" placeholder="رقم الهاتف">
+                <p>سنرسل إليك رسالة نصية لتأكيد رقمك. قد تُطبق أسعار الرسائل.</p>
+                <a href="./Payment.htm" onclick="return validateForm(event)">Follow up</a>
+            </form>
+        </section>
+    </div>
+</body>
+
+</html>

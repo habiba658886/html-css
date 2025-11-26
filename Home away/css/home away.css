@@ -1,0 +1,77 @@
+body {
+    font-family: "work sans", sans-serif
+}
+
+body {
+    margin: 0;
+    /* إزالة الهوامش الافتراضية */
+    padding: 0;
+    /* إزالة التباعد الافتراضي */
+    font-family: Arial, sans-serif;
+    /* خط النصوص */
+    background-image: url('../images/462583448_872920031657507_7180461505656445234_n.jpg');
+    /* استبدل path-to-your-image بمسار الصورة */
+    background-size: cover;
+    /* جعل الصورة تغطي الصفحة بالكامل */
+    background-repeat: no-repeat;
+    /* منع تكرار الصورة */
+    background-position: center;
+    /* تمركز الصورة */
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+    background-color: #c59797;
+}
+.h1{
+    margin-left: 0; /* لإزالة المسافة من اليسار */
+    text-align: left; /* لمحاذاة النص إلى اليسار */
+
+}
+
+.logo{
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: bold; 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #020202;
+    margin-right: 0; /* لإزالة المسافة من اليسار */
+    text-align: right; /* لمحاذاة النص إلى اليسار */
+}
+body.logo{
+    margin: 0;
+    margin: 30%; /* لإزالة المسافة من اليسار */
+    text-align: right;        /* النص على اليمين*/
+}
+
+.navbar{
+    display: flex;                  /* نحط الصوره وجمبها الكلاام*/
+    justify-content: space-between; /* يعمل على توزيع مساافه*/
+    align-items: center;/* توزيع مسافات */
+    padding: 0 5%;
+ }
+
+.nav-link{
+     list-style: none;      /*يزيل النقط من جمب العناصر الغير مرتبله*/
+     display: flex;        /* نحط الصوره وجمبها الكلاام  */
+     gap: 25px;           /* */
+     margin: 0;          /**/
+     padding: 0;        /**/
+
+}
+.nav-link a{
+    text-decoration: none; 
+    color: #060606;
+    font-weight: bold;
+    font-size:20px;
+}
+.nav-link a:hover{
+    color: red;
+}
+    
